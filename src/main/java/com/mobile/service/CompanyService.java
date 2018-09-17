@@ -1,6 +1,6 @@
-package com.chatRobot.service;
+package com.mobile.service;
 
-import com.chatRobot.pojo.Company;
+import com.mobile.pojo.Company;
 
 import java.util.List;
 

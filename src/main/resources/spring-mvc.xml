@@ -11,7 +11,7 @@
        http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 
     <!-- 扫描web相关的bean -->
-    <context:component-scan base-package="com.chatRobot.controller"/>
+    <context:component-scan base-package="com.mobile.controller"/>
 
     <!-- 开启SpringMVC注解模式 -->
     <mvc:annotation-driven/>
@@ -25,11 +25,11 @@
             <!-- /register 和 /login 不需要拦截-->
             <mvc:exclude-mapping path="/user/register"/>
             <mvc:exclude-mapping path="/user/login"/>
-            <bean class="com.chatRobot.interceptor.TokenInterceptor"></bean>
+            <bean class="com.mobile.interceptor.TokenInterceptor"></bean>
         </mvc:interceptor>
     </mvc:interceptors>
 
-    <bean class="com.chatRobot.interceptor.DefaultExceptionHandler"></bean>
+    <bean class="com.mobile.interceptor.DefaultExceptionHandler"></bean>
     <!-- 配置jsp 显示ViewResolver -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/"/>

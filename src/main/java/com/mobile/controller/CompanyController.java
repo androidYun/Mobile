@@ -1,11 +1,11 @@
-package com.chatRobot.controller;
+package com.mobile.controller;
 
-import com.chatRobot.pojo.Company;
-import com.chatRobot.pojo.User;
-import com.chatRobot.pojo.common.JsonResult;
-import com.chatRobot.pojo.common.ResultCode;
-import com.chatRobot.service.impl.CompanyServiceImpl;
-import com.chatRobot.service.impl.UserServiceImpl;
+import com.mobile.pojo.Company;
+import com.mobile.pojo.User;
+import com.mobile.pojo.common.JsonResult;
+import com.mobile.pojo.common.ResultCode;
+import com.mobile.service.impl.CompanyServiceImpl;
+import com.mobile.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;

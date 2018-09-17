@@ -2,19 +2,19 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.chatRobot.dao.ICompanyDao">
+<mapper namespace="com.mobile.dao.ICompanyDao">
 
-    <select id="getCompanyByName" parameterType="String" resultType="com.chatRobot.pojo.Company">
+    <select id="getCompanyByName" parameterType="String" resultType="com.mobile.pojo.Company">
         select * from company where companyName=#{companyName}
     </select>
 
 
-    <insert id="insertCompany" keyProperty="id" parameterType="com.chatRobot.pojo.Company">
+    <insert id="insertCompany" keyProperty="id" parameterType="com.mobile.pojo.Company">
         insert into company(companyName,companyAddress,createTime) values (#{companyName},#{companyAddress},#{createTime})
     </insert>
 
 
-    <select id="getCompanyById" parameterType="int" resultType="com.chatRobot.pojo.Company">
+    <select id="getCompanyById" parameterType="int" resultType="com.mobile.pojo.Company">
        select * from company where companyId=#{companyId}
     </select>
 
@@ -22,7 +22,7 @@
         delete from company where companyId=#{companyId}
     </delete>
 
-    <select id="selectCompanyList" parameterType="int" resultType="com.chatRobot.pojo.Company">
+    <select id="selectCompanyList" parameterType="int" resultType="com.mobile.pojo.Company">
         select * from company limit ${(pageNumber-1)*pageSize}, ${pageNumber*pageSize}
     </select>
 </mapper>

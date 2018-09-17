@@ -2,17 +2,17 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.chatRobot.dao.IUserDao">
+<mapper namespace="com.mobile.dao.IUserDao">
     <!-- 目的：为dao接口方法提供sql语句配置 -->
-    <select id="getUserByName" parameterType="String" resultType="com.chatRobot.pojo.User">
+    <select id="getUserByName" parameterType="String" resultType="com.mobile.pojo.User">
             select * from user where name=#{name}
     </select>
 
-    <select id="getUserById" parameterType="int" resultType="com.chatRobot.pojo.User">
+    <select id="getUserById" parameterType="int" resultType="com.mobile.pojo.User">
             select * from user where id=#{userId}
     </select>
 
-    <insert id="insertUser" parameterType="com.chatRobot.pojo.User">
+    <insert id="insertUser" parameterType="com.mobile.pojo.User">
         insert into user(name,password,role) values (#{name},#{password},#{role})
     </insert>
 </mapper>

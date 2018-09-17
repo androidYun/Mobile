@@ -1,8 +1,8 @@
-package com.chatRobot.interceptor;
+package com.mobile.interceptor;
 
 import com.alibaba.fastjson.JSON;
-import com.chatRobot.pojo.common.JsonResult;
-import com.chatRobot.pojo.common.ResultCode;
+import com.mobile.pojo.common.JsonResult;
+import com.mobile.pojo.common.ResultCode;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
 

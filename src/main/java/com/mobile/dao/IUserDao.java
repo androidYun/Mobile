@@ -1,6 +1,6 @@
-package com.chatRobot.dao;
+package com.mobile.dao;
 
-import com.chatRobot.pojo.User;
+import com.mobile.pojo.User;
 
 public interface IUserDao {
     User getUserByName(String name);

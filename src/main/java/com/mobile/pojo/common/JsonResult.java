@@ -1,4 +1,4 @@
-package com.chatRobot.pojo.common;
+package com.mobile.pojo.common;
 
 public class JsonResult{
 

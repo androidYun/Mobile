@@ -1,4 +1,4 @@
-package com.chatRobot.pojo;
+package com.mobile.pojo;
 
 import java.util.Date;
 

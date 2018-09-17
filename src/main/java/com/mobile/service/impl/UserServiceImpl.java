@@ -1,8 +1,8 @@
-package com.chatRobot.service.impl;
+package com.mobile.service.impl;
 
-import com.chatRobot.dao.IUserDao;
-import com.chatRobot.pojo.User;
-import com.chatRobot.service.UserService;
+import com.mobile.dao.IUserDao;
+import com.mobile.pojo.User;
+import com.mobile.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +14,8 @@ public class UserServiceImpl implements UserService {
     IUserDao iUserDao;
 
     @Override
-    public User login(String userName, String password) {
-        User user = iUserDao.getUserByName(userName);
+    public User login(String phone, String password) {
+        User user = iUserDao.getUserByName(phone);
         return user;
     }
 

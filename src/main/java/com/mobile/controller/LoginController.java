@@ -1,10 +1,10 @@
-package com.chatRobot.controller;
+package com.mobile.controller;
 
-import com.chatRobot.pojo.User;
-import com.chatRobot.pojo.common.JsonResult;
-import com.chatRobot.pojo.common.ResultCode;
-import com.chatRobot.service.UserService;
-import com.chatRobot.utils.JwtToken;
+import com.mobile.pojo.User;
+import com.mobile.pojo.common.JsonResult;
+import com.mobile.pojo.common.ResultCode;
+import com.mobile.service.UserService;
+import com.mobile.utils.JwtToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
@@ -20,8 +20,8 @@ public class LoginController {
 
     @ResponseBody
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public JsonResult login(String username, String password) throws Exception {
-        User user = userService.login(username, password);
+    public JsonResult login(String phone, String password) throws Exception {
+        User user = userService.login(phone, password);
         JsonResult result = new JsonResult();
         if (user == null) {
             result.setCode(ResultCode.EXCEPTION.code());
@@ -35,9 +35,9 @@ public class LoginController {
 
     @ResponseBody
     @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public JsonResult register(Integer role, String username, String password) {
+    public JsonResult register( String phone, String password) {
         JsonResult result = new JsonResult();
-        if (StringUtils.isEmpty(username)) {
+        if (StringUtils.isEmpty(phone)) {
             result.setCode(ResultCode.PARAMS_ERROR.code());
             result.setMessage("用户名不能为空");
             return result;
@@ -47,17 +47,12 @@ public class LoginController {
             result.setMessage("密码不能为空");
             return result;
         }
-        if (role != 1 || role != 2) {
-            result.setCode(ResultCode.PARAMS_ERROR.code());
-            result.setMessage("角色类型选择错误");
-            return result;
-        }
-        User user = userService.login(username, password);
+        User user = userService.login(phone, password);
         if (user != null) {
             result.setCode(ResultCode.SUCCESS_IS_HAVE.code());
             result.setMessage("此用户名已存在");
         } else {
-            String register = userService.register(role, username, password);
+            String register = userService.register( phone, password);
             result.setCode(ResultCode.SUCCESS.code());
         }
         return result;

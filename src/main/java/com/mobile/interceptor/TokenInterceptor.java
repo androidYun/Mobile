@@ -1,9 +1,9 @@
-package com.chatRobot.interceptor;
+package com.mobile.interceptor;
 
 import com.alibaba.fastjson.JSON;
-import com.chatRobot.pojo.common.JsonResult;
-import com.chatRobot.pojo.common.ResultCode;
-import com.chatRobot.utils.JwtToken;
+import com.mobile.pojo.common.JsonResult;
+import com.mobile.pojo.common.ResultCode;
+import com.mobile.utils.JwtToken;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 

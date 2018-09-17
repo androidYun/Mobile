@@ -1,8 +1,8 @@
-package com.chatRobot.service.impl;
+package com.mobile.service.impl;
 
-import com.chatRobot.dao.ICompanyDao;
-import com.chatRobot.pojo.Company;
-import com.chatRobot.service.CompanyService;
+import com.mobile.dao.ICompanyDao;
+import com.mobile.pojo.Company;
+import com.mobile.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

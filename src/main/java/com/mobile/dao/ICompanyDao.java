@@ -1,6 +1,6 @@
-package com.chatRobot.dao;
+package com.mobile.dao;
 
-import com.chatRobot.pojo.Company;
+import com.mobile.pojo.Company;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
