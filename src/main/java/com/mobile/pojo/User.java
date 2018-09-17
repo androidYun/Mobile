@@ -10,8 +10,6 @@ public class User {
 
     private String password;
 
-    private Integer role;
-
     private Date createTime;
 
     public Integer getId() {
@@ -38,13 +36,6 @@ public class User {
         this.password = password;
     }
 
-    public Integer getRole() {
-        return role;
-    }
-
-    public void setRole(Integer role) {
-        this.role = role;
-    }
 
     public Date getCreateTime() {
         return createTime;

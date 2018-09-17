@@ -20,12 +20,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String register(Integer role, String username, String password) {
+    public String register(String username, String password) {
         User user = new User();
         user.setName(username);
         user.setPassword(password);
         user.setCreateTime(new Date());
-        user.setRole(role);
         iUserDao.insertUser(user);
         return "success";
     }

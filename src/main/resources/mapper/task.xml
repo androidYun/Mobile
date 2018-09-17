@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mobile.pojo.Task">
+    <select id="selectTaskListById" parameterType="int" resultType="com.mobile.pojo.Task">
+        select * from task where userId=#{userId} limit ${(pageNumber-1)*pageSize}, ${pageNumber*pageSize}
+    </select>
+
+    <update id="updateTask" parameterType="com.mobile.pojo.Task">
+        update task set taskTitle=#{taskTitle},
+        taskRemark=#{taskRemark},
+         clientPhone=#{clientPhone},
+          clientAddress=#{clientAddress},
+            clientName=#{clientName},
+           isFinish=#{isFinish},
+            appointmentTime=#{appointmentTime},
+    </update>
+
+    <delete id="deleteTask" parameterType="int">
+       delete from task where taskId="#{userId}"
+    </delete>
+
+    <insert id="addTask" parameterType="com.mobile.pojo.Task">
+        insert into task(taskTitle,
+         clientPhone, clientAddress,
+          clientName, isFinish,
+          appointmentTime, taskRemark,
+           userId)
+           values (#{taskTitle},(#{clientPhone},
+           #{clientAddress},(#{clientName},
+            #{isFinish},(#{appointmentTime},
+             #{userId})
+    </insert>
+    <select id="selectTaskById" parameterType="int" resultType="com.mobile.pojo.Task">
+        select * from task where taskId=#{taskId}
+    </select>
+
+    <select id="selectTaskByPhone" parameterType="String" resultType="com.mobile.pojo.Task">
+        select * from task where clientPhone=#{clientPhone}
+    </select>
+</mapper>
