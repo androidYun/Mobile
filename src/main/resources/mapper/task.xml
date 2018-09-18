@@ -2,9 +2,11 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.mobile.pojo.Task">
+<mapper namespace="com.mobile.dao.ITaskDao">
     <select id="selectTaskListById" parameterType="int" resultType="com.mobile.pojo.Task">
-        select * from task where userId=#{userId} limit ${(pageNumber-1)*pageSize}, ${pageNumber*pageSize}
+        select * from task where userId=#{userId} and  isFinish=#{isFinish}
+
+         limit ${(pageSize-1)*pageNumber}, ${pageNumber*pageSize}
     </select>
 
     <update id="updateTask" parameterType="com.mobile.pojo.Task">
@@ -14,25 +16,27 @@
           clientAddress=#{clientAddress},
             clientName=#{clientName},
            isFinish=#{isFinish},
-            appointmentTime=#{appointmentTime},
+            appointmentTime=#{appointmentTime}
+            where taskId=#{taskId}
     </update>
 
-    <delete id="deleteTask" parameterType="int">
-       delete from task where taskId="#{userId}"
+    <delete id="deleteTask" parameterType="Integer">
+       delete from task where taskId=#{taskId}
     </delete>
 
-    <insert id="addTask" parameterType="com.mobile.pojo.Task">
-        insert into task(taskTitle,
-         clientPhone, clientAddress,
-          clientName, isFinish,
-          appointmentTime, taskRemark,
+    <insert id="addTask" parameterType="com.mobile.pojo.Task" keyProperty="int">
+        insert into task(taskTitle,clientPhone,
+        clientAddress,clientName,
+         isFinish, appointmentTime,
+         taskRemark,createTime,
            userId)
-           values (#{taskTitle},(#{clientPhone},
-           #{clientAddress},(#{clientName},
-            #{isFinish},(#{appointmentTime},
+           values (#{taskTitle},#{clientPhone},
+           #{clientAddress},#{clientName},
+            #{isFinish},#{appointmentTime},
+             #{taskRemark},#{createTime},
              #{userId})
     </insert>
-    <select id="selectTaskById" parameterType="int" resultType="com.mobile.pojo.Task">
+    <select id="selectTaskById" parameterType="java.lang.Integer" resultType="com.mobile.pojo.Task">
         select * from task where taskId=#{taskId}
     </select>
 

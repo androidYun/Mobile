@@ -5,14 +5,17 @@
 <mapper namespace="com.mobile.dao.IUserDao">
     <!-- 目的：为dao接口方法提供sql语句配置 -->
     <select id="getUserByName" parameterType="String" resultType="com.mobile.pojo.User">
-            select * from user where name=#{name}
+            select * from user where phone=#{phone}
     </select>
 
+    <select id="getUserByPhoneAndPassword" parameterType="String" resultType="com.mobile.pojo.User">
+            select * from user where phone=#{phone} and password=#{password}
+    </select>
     <select id="getUserById" parameterType="int" resultType="com.mobile.pojo.User">
-            select * from user where id=#{userId}
+            select * from user where userId=#{userId}
     </select>
 
     <insert id="insertUser" parameterType="com.mobile.pojo.User">
-        insert into user(name,password,role) values (#{name},#{password},#{role})
+        insert into user(phone,password,createTime) values (#{phone},#{password},#{createTime})
     </insert>
 </mapper>
